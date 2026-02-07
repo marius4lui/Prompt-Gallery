@@ -85,6 +85,7 @@ function buildPromptSidebar() {
 }
 
 export default defineConfig({
+  base: process.env.BASE_URL || "/",
   lang: "de-DE",
   title: "Prompt Gallery",
   description: "Interaktive, erweiterbare Prompt Gallery mit VitePress.",

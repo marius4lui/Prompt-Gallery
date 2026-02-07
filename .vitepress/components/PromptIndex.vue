@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computed, ref } from "vue";
+import { withBase } from "vitepress";
 
 type PromptMeta = {
   title?: string;
@@ -48,7 +49,7 @@ const entries = computed<PromptEntry[]>(() =>
         title: fm.title ?? "Unbenannter Prompt",
         description: fm.description ?? "",
         category: fm.category ?? "Unkategorisiert",
-        link
+        link: withBase(link)
       };
     })
     .sort((a, b) => a.title.localeCompare(b.title, "de"))
